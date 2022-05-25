@@ -11,79 +11,80 @@
         />
         <title>Dice Roller</title>
         <link rel="stylesheet" href="roller.css" />
+        <script src="roller.js"></script>
     </head>
     <body>
         <section class="flex-container">
             <div class="flex-box box">
-                <div id="d2">
-                    <input id="d2_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d2_#" type="number" value="1" min="1">
                     d2 +
-                    <input id="d2_+" type="number" placeholder="0">
+                    <input id="d2_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d2_result" type="readonly">
                 </div>
-                <div id="d3">
-                    <input id="d3_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d3_#" type="number" value="1" min="1">
                     d3 +
-                    <input id="d3_+" type="number" placeholder="0">
+                    <input id="d3_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d3_result" type="readonly">
                 </div>
-                <div id="d4">
-                    <input id="d4_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d4_#" type="number" value="1" min="1">
                     d4 +
-                    <input id="d4_+" type="number" placeholder="0">
+                    <input id="d4_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d4_result" type="readonly">
                 </div>
-                <div id="d6">
-                    <input id="d6_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d6_#" type="number" value="1" min="1">
                     d6 +
-                    <input id="d6_+" type="number" placeholder="0">
+                    <input id="d6_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d6_result" type="readonly">
                 </div>
-                <div id="d8">
-                    <input id="d8_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d8_#" type="number" value="1" min="1">
                     d8 +
-                    <input id="d8_+" type="number" placeholder="0">
+                    <input id="d8_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d8_result" type="readonly">
                 </div>
-                <div id="d10">
-                    <input id="d10_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d10_#" type="number" value="1" min="1">
                     d10 +
-                    <input id="d10_+" type="number" placeholder="0">
+                    <input id="d10_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d10_result" type="readonly">
                 </div>
-                <div id="d12">
-                    <input id="d12_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d12_#" type="number" value="1" min="1">
                     d12 +
-                    <input id="d12_+" type="number" placeholder="0">
+                    <input id="d12_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d12_result" type="readonly">
                 </div>
-                <div id="d20">
-                    <input id="d20_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d20_#" type="number" min="1" value="1">
                     d20 +
-                    <input id="d20_+" type="number" placeholder="0">
-                    <input type="button" value="Roll">
+                    <input id="d20_+" type="number" value="0">
+                    <input type="button" value="Roll" onclick="d20()">
                     <input id="d20_result" type="readonly">
                 </div>
-                <div id="d100">
-                    <input id="d100_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="d100_#" type="number" value="1" min="1">
                     d100 +
-                    <input id="d100_+" type="number" placeholder="0">
+                    <input id="d100_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="d100_result" type="readonly">
                 </div>
-                <div id="dcustom">
-                    <input id="custom_#" type="number" placeholder="1" min="1">
+                <div>
+                    <input id="custom_#" type="number" value="1" min="1">
                     d
-                    <input id="custom_sides" type="number" placeholder="1" min="1">
+                    <input id="custom_sides" type="number" value="1" min="1">
                     +
-                    <input id="custom_+" type="number" placeholder="0">
+                    <input id="custom_+" type="number" value="0">
                     <input type="button" value="Roll">
                     <input id="custom_result" type="readonly">
                 </div>
