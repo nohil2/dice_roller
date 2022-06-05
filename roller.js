@@ -1,19 +1,48 @@
-function d20(){
-    var num = document.getElementById('d20_#').value;
-    var modifier = document.getElementById('d20_+').value;
-    console.log(num, modifier);
+function roller(sides){
+    var num = document.getElementById("d"+sides+"_#").value;
+    var modifier = document.getElementById("d"+sides+"_+").value;
 
-    var results = roll(num, 20);
-    var sum = results.reduce((a,b) => a+b) + parseInt(modifier);
-    console.log(sum)
-    document.getElementById("d20_result").value = sum;
+    var rolls = roll(num, parseInt(sides));
+    var sum = rolls.reduce((a,b) => a+b) + parseInt(modifier);
+
+    document.getElementById("d"+sides+"_result").value = sum;
+    post(sides, sum, rolls, modifier);
+    return;
+}
+
+function custom_roller(){
+    var num = document.getElementById("custom_#").value;
+    var modifier = document.getElementById("custom_+").value;
+    var sides = document.getElementById("custom_sides").value;
+
+    var rolls = roll(num, sides);
+    var sum = rolls.reduce((a,b) => a+b) + parseInt(modifier);
+
+    document.getElementById("custom_result").value = sum;
+    post(sides, sum, rolls, modifier);
+    return;
 }
 
 function roll(num, sides){
-    var results = [];
+    var rolls = [];
     for (let i = 0; i < num; i++){
-        results[i] = Math.floor(Math.random() * (sides)) + 1;
+        rolls[i] = Math.floor(Math.random() * (sides)) + 1;
     }
-    console.log(results)
-    return results;
+    console.log(rolls)
+    return rolls;
+}
+
+function post(sides, sum, rolls, modifier){
+    var dice = rolls.length;
+    var message = "<p><b>Roll</b>("+dice+"d"+sides+")+"+modifier+":<br>";
+    for(let i=0; i<rolls.length; i++){
+        message = message+rolls[i]+", ";
+    }
+    message = message+"+"+modifier+"<br>Total = "+sum+'</p>';
+
+    document.getElementById("posthere").insertAdjacentHTML("beforeend",message);
+    text_position = document.getElementById("results");
+    text_position.scrollTop = text_position.scrollHeight;
+    return;
+
 }
