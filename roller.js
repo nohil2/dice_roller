@@ -28,7 +28,6 @@ function roll(num, sides){
     for (let i = 0; i < num; i++){
         rolls[i] = Math.floor(Math.random() * (sides)) + 1;
     }
-    console.log(rolls)
     return rolls;
 }
 
@@ -38,11 +37,22 @@ function post(sides, sum, rolls, modifier){
     for(let i=0; i<rolls.length; i++){
         message = message+rolls[i]+", ";
     }
-    message = message+"+"+modifier+"<br>Total = "+sum+'</p>';
+    message = message+"+"+modifier+"<br>Total = "+sum+"</p>";
 
     document.getElementById("posthere").insertAdjacentHTML("beforeend",message);
     text_position = document.getElementById("results");
     text_position.scrollTop = text_position.scrollHeight;
     return;
+}
 
+function reset(){
+    var ids = ["d2", "d3", "d4", "d6", "d8", "d10", "d12", "d20", "d100", "custom"];
+    for(let i=0; i<ids.length; i++){
+        document.getElementById(ids[i]+"_#").value = 1;
+        document.getElementById(ids[i]+"_+").value = 0;
+        document.getElementById(ids[i]+"_result").value = null;
+    }
+    document.getElementById("custom_sides").value = 1;
+    document.getElementById("posthere").innerHTML = "";
+    return;
 }

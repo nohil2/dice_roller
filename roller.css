@@ -6,6 +6,7 @@ input[type="number"]{
 input[type="readonly"]{
     width:80px;
     min-width:50px;
+    text-align: center;
 }
 
 .flex-container {
